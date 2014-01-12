@@ -1,7 +1,6 @@
-Aizu in Wonderfull World
+[Aizu in Wonderfull World](https://dl.dropboxusercontent.com/u/74842723/AizuInWonderfullWorld/index.html)
 =====================
 
-Aizu in Wonderfull World.
 Let's virtualy travels from Aizu to the world latitudinally or longitudinally!  
 * The photos are gathered from [Flickr](http://www.flickr.com/).  
 * The geolocation of some photos appear wong but they have these geolocation.  
@@ -9,7 +8,8 @@ Let's virtualy travels from Aizu to the world latitudinally or longitudinally!
 
 Installation
 --------
-No installation is required.  Jet put all files in the path where accessible from Web Browser.
+No installation is required.  Justt put all files in the path where accessible from Web Browser.
+Accessing to index.html to run.
 
 License
 --------
