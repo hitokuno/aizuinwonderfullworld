@@ -1,0 +1,2 @@
+lat lon id secret server farm org.scrt fmt
+37.36614 60.525119 6087791347 a71e805c3b 6064 7 44 photo

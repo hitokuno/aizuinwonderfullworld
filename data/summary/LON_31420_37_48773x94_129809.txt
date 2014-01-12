@@ -1,0 +1,2 @@
+lat lon id secret server farm org.scrt fmt
+37.626681 93.796424 4082919531 6de8d022f5 2546 3 10 photo

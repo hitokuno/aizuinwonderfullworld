@@ -1,0 +1,2 @@
+lat lon id secret server farm org.scrt fmt
+37.3753 42.408 5698548292 0ec7d2789c 2060 3 169 video

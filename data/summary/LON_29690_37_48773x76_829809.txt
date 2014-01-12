@@ -1,0 +1,3 @@
+lat lon id secret server farm org.scrt fmt
+37.272241 77.115055 2095231538 9baca08a73 2072 3 23 photo
+37.272241 77.115055 2095231694 71fefa78cf 2117 3 35 photo

@@ -1,0 +1,2 @@
+lat lon id secret server farm org.scrt fmt
+68.163383 139.87793 9418357111 fbe95508e9 3733 4 14 photo

@@ -1,0 +1,3 @@
+lat lon id secret server farm org.scrt fmt
+-5.997252 -40.293388 5846836743 5fb93bff21 3471 4 a7187dbc8b jpg
+-5.966667 -40.3 5993171258 fae96910f5 6020 7 a98e5788bf jpg

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Aizu in Wonderful World</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <style type="text/css">
+    #container { background-color: #333333; padding: 0px; margin: 0px; width:100%;}
+    .panel-footer { padding: 0px; }
+    .panel-body { padding: 5px; }
+    .panel { margin-bottom: 10px; }
+    #header { margin:10px;}
+    #config {margin:10px;}
+    #help {margin:10px;}
+    #infoRow {margin:10px;}
+    .row > .area {padding: 5px;}
+    #flag {border: 1px solid;}
+    #map {width:100%; height: 320px;}
+  </style>
+</head>
+<body>
+  <div id="container" class="container">
+    <div id="header" class="row">
+      <div class="col-xs-10 area">
+        <div class="panel panel-default">
+          <h4 align="center">Aizu in Wonderful World</h4>
+        </div>
+      </div>
+      <div class="col-xs-1 area">
+        <div class="panel panel-default" align="center">
+          <h4 class="glyphicon glyphicon-wrench" ></h4>
+        </div>
+      </div>
+      <div class="col-xs-1 area">
+        <div class="panel panel-default" align="center">
+          <h4 class="glyphicon glyphicon-info-sign" ></h4>
+        </div>
+      </div>
+    </div>
+    <div id="config" class="row toggle" style="display: none">
+      <div class="area col-xs-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">Direction</div>
+          <div class="direction btn-group">
+            <button type="button" class="btn btn-default active">Latitude</button>
+            <button type="button" class="btn btn-default">Longitude</button>
+          </div>
+        </div>
+      </div>
+      <div class="area col-xs-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">Map Zoom</div>
+          <form role="form">
+            <select class="form-control">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option selected>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+            </select>
+          </form>
+        </div>
+      </div>
+      <div class="area col-xs-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">Sound</div>
+          <div class="sound btn-group">
+            <button type="button" class="btn btn-default">Off</button>
+            <button type="button" class="btn btn-default active">Birds</button>
+            <button type="button" class="btn btn-default">Waves</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="help" class="row toggle" style="display: none">
+      <div class="area col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">Help</div>
+          <ul>
+            <li>Let's virtualy travels from Aizu to the world latitudinally or longitudinally!</li>
+            <li>The photos are gathered from <a href="http://www.flickr.com/" target="_blank">Flickr</a>.</li>
+            <li>The geolocation of some photos appear wong but they have these geolocation.</li>
+            <li>You may click the link to Wikipedia if a city/region is found near the location of the photo.</li>
+            <li>Data Sources
+              <ul>
+                <li><a href="http://www.flickr.com/services/" target="_blank">Flickr</a></li>
+                <li><a href="https://developers.google.com/maps/documentation/javascript/geocoding?hl=en" target="_blank">Google Maps, Reverse Geolocation</a></li>
+                <li><a href="http://en.wikipedia.org/wiki/List_of_national_anthems" target="_blank">Wikipedia, List of National Anthems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="photoRow" class="row">
+      <div id="flow" class="ContentFlow">
+        <div class="flow">
+          <img class="item" src="img/245231107_d89c23f45f.jpg" lat="37.48773" lon="139.929809"></img>
+        </div>
+      </div>
+    </div>
+    <div id="infoRow" class="row">
+      <div class="area col-xs-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">Photo Information</div>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span>Latitude: </span>
+              <span id="Latitude">37.3552</span>
+            </li>
+            <li class="list-group-item">
+              <span>Longitude: </span>
+              <span id="Longitude">140.432</span>
+            </li>
+            <li class="list-group-item">
+              <span>Distance from Aizu: </span>
+              <span id="Distance">0</span>
+              <span>km</span>
+            </li>
+          </ul>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">Advatisements</div>
+          <ul class="list-group">
+            <li><a href="http://www.expedia.com" target="_blank">
+              <img src="./img/logo_expedia.jpg" width="48%"></img>
+            </a>
+            <a href="http://www.hotels.com" target="_blank">
+              <img src="./img/logo_hotels.jpg" width="48%"></img>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="area col-xs-6">
+        <div class="panel panel-default">
+          <div align="center"><div id="map"></div></div>
+        </div>
+      </div>
+      <div class="area col-xs-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">Nearby City/Village</div>
+          <ul class="list-group">
+              <li class="list-group-item" id="address1">Aizuwakamatsu</li>
+              <li class="list-group-item" id="address2">Fukushima</li>
+              <li class="list-group-item">
+                <span id="address3">Japan</span>
+                <span>  </span>
+                <img id="flag" height="20" width="30" src="http://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/35px-Flag_of_Japan.svg.png"></img>
+              </li>
+              <li class="list-group-item">
+                <a id="wiki" href="http://en.wikipedia.org/wiki/Aizuwakamatsu,_Fukushima" target="_blank">Wiki</a>
+              </li>
+          </ul>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">Anthem</div>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <a id="anthem" href="http://en.wikipedia.org/wiki/File:Kimi_ga_Yo_instrumental.ogg" target="_blank">Kimi ga Yo</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+  </div>
+  <div style="margin:0px;">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Aizu In Wonderfull World</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://aizu.io/" property="cc:attributionName" rel="cc:attributionURL">TOKUNO Hirokazu, Code for Aizu</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+  </div>
+
+  <audio id="sound" autoplay loop="" controls="" preload="none" style="width: 0px; height: 0px; visibility: hidden;">
+    <source src="http://www.soundrown.com/Audio/Final%20Normalized/mp3/Birds%20Final%20Thirty.mp3"></source>
+    <source src="http://www.soundrown.com/Audio/Final%20Normalized/ogg/Birds%20Final%20Thirty.ogg"></source>
+  </audio>
+
+  <script language="JavaScript" type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+  <script language="JavaScript" type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script language="JavaScript" type="text/javascript" src="js/contentflow.js"></script>
+  <link type="text/css" rel="stylesheet" href="css/contentflow.css"> </link>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&language=en&libraries=geometry"></script>
+  <script language="JavaScript" type="text/javascript" src="js/search.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-46368466-1', 'sakura.ne.jp');
+    ga('send', 'pageview');
+
+    jQuery(".glyphicon-wrench").click(function () {
+      jQuery("#config").toggle();
+    });
+
+    jQuery(".glyphicon-info-sign").click(function () {
+      jQuery("#help").toggle();
+    });
+  </script>
+  </body>
+</html>
